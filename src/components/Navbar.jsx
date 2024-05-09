@@ -4,9 +4,9 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className='navbar'>
+    <nav className='navbar hidden'>
         <ul>
-            <li>
+            <li key={1}>
                 <NavLink to='/flights' className='nav-link'>
                    <div>
                      <img alt='ixigo flights' src='https://edge.ixigo.com/st/vimaan/_next/static/media/flight.f515b25a.svg'/>
@@ -14,7 +14,7 @@ const Navbar = () => {
                    <p>Flights</p>
                 </NavLink>
             </li>
-            <li>
+            <li key={2}>
                 <NavLink to='/hotels' className='nav-link'>
                    <div>
                      <img alt='ixigo hotels' src='https://edge.ixigo.com/st/vimaan/_next/static/media/hotel.4b63222d.svg'/>
@@ -22,7 +22,7 @@ const Navbar = () => {
                    <p>Hotels</p>
                 </NavLink>
             </li>
-            <li>
+            <li key={3}>
                 <NavLink to='/trains' className='nav-link'>
                    <div>
                      <img alt='ixigo trains' src='https://edge.ixigo.com/st/vimaan/_next/static/media/train.d3e3d1e5.svg'/>
@@ -30,7 +30,7 @@ const Navbar = () => {
                    <p>Trains</p>
                 </NavLink>
             </li>
-            <li>
+            <li key={4}> 
                 <NavLink to='/buses' className='nav-link'>
                    <div>
                      <img alt='ixigo buses' src='https://edge.ixigo.com/st/vimaan/_next/static/media/bus.1942c5dd.svg'/>

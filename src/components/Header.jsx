@@ -1,27 +1,30 @@
 import React, { useRef } from 'react'
-import "../styles/Header.css"
+import "../styles/Header.css";
 import {NavLink} from 'react-router-dom';
 
 // const headerRef = useRef("");
 export const Header = () => {
-//   window.onscroll = function()
-//   {myFunction()} ;
-//  function myFunction(){
-//       if(window.scrollY >= 155){
-//         console.log("yes");
-//         headerRef.current.classList.add("sticky");
-//       }else{
-//         console.log("no");
-//         headerRef.current.classList.remove("sticky");
-//       }
-//  }
  
-//ref={headerRef}
+    window.onscroll = function(){myFunction()} ;
+    // var top = navbar.offsetTop;
+    function myFunction(){
+    const navbar = document.querySelector('.navbar');
+    console.log(navbar);
+        if(window.scrollY >=  70){  //67
+          console.log("yes");
+          navbar.classList.add("sticky");
+        }else{
+          console.log("no");
+          navbar.classList.remove("sticky");
+        }
+  }
+//canvas
+
 
   return (
     <div className='header'  > 
       <div className='header-logo'>
-          <NavLink to='/'><img alt='ixigo.com' src='https://edge.ixigo.com/st/vimaan/_next/static/media/logo.44edf9f1.svg'/></NavLink>
+          <NavLink to='/flight'><img alt='ixigo.com' src='https://edge.ixigo.com/st/vimaan/_next/static/media/logo.44edf9f1.svg'/></NavLink>
       </div>
       <div className="header-content"> 
             <div className="header-content-div">
@@ -34,10 +37,12 @@ export const Header = () => {
                   <p>Customer Service</p>
               </NavLink>
             </div>
-            <div className='header-signin'>
-                  <div><img alt='user' src='https://edge.ixigo.com/st/vimaan/_next/static/media/userFilled.12154510.svg'/></div>
-                  <button className='loginButton'>Log in/Sign up</button>
-            </div>
+                <div className='header-signin'>
+                      <div><img alt='user' src='https://edge.ixigo.com/st/vimaan/_next/static/media/userFilled.12154510.svg'/></div>
+              <NavLink to='login-signup' >
+                      <button type='submit' className='loginButton'>Log in/Sign up</button>
+              </NavLink>
+                </div>
       </div>
     </div>
   )
